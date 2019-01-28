@@ -1,0 +1,116 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage[margin=0.5in]{geometry}
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering{\Huge Liam \textsc{Aharon}}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal}
+
+\begin{tabular}{rlrlrl}
+    \textsc{Phone:} & +61 457 085 920 
+    & \textsc{email:} & \href{mailto:liam.aharon@hotmail.com}{liam.aharon@hotmail.com} 
+    & Location: & Melbourne, VIC\\
+    \textsc{github:} & \href{https://github.com/liamaharon}{github.com/liamaharon} & \textsc{Linkedin:} & \href{https://www.linkedin.com/in/liamaharon/}{linkedin.com/in/liamaharon}
+    & \textsc{Twitter:} & \href{https://www.twitter.com/liamaharon/}{twitter.com/liamaharon}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{13.5cm}}
+    \textsc{Jan 2018-Feb 2019} & Software Developer at \textsc{Hubii as}, \emph{Ethereum Development}\footnotesize{
+    \begin{itemize}
+        \item Lead developer of \href{https://github.com/hubiinetwork/hubii-core}{hubii core}. hubii core is an open source cross-platform Ethereum wallet manager and exchange connected to hubii's enterprise-focused Ethereum second layer scaling solution. Built using the Electron/React/Redux stack.
+        \item Contributed to the design and implementation of the \href{https://github.com/hubiinetwork/nahmii-sdk}{nahmii JavaScript SDK} and \href{https://github.com/hubiinetwork/nahmii-cli}{nahmii CLI}.
+    \end{itemize}}\\
+
+    \textsc{Summer 2018} & Summer Intern at \textsc{Deloitte}, \emph{Digital Consulting}\footnotesize{
+    \begin{itemize}
+        \item Took initiative to greatly improve the accuracy and speed of Deloitte's QA pipeline by automating visual regression testing with \href{https://github.com/garris/BackstopJS}{BackstopJS}. The automation freed hours of weekly developer time. 
+        \item Completed front-end development tasks for a major government agency.
+        \item Received a graduate offer from the Deloitte Digital Consulting team as a result of a positive review.
+    \end{itemize}}\\
+    \textsc{Aug-Dec 2017} & Software Developer at \textsc{Crowd Mobile}, \emph{Mobile Entertainment}\footnotesize{
+    \begin{itemize}
+        \item  Assisted Crowd Mobile in their transition from using Angular 1.6 to a React/Redux stack for their internal admin web applications.
+    \end{itemize}
+    }\\
+    \textsc{Jun-Aug 2017} & Co-Head Teacher at \textsc{Code Camp}, \emph{Coding Education}\footnotesize{
+    \begin{itemize}
+        \item  Taught kids how to develop apps by block-coding. Managed the classroom and led Teaching Assistants to help every student make their very own killer app.
+    \end{itemize}}
+\end{tabular}
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+    \textsc{2016-Present} & \textbf{Bachelor of Science} at \textsc{The University of Melbourne}\\
+    & Taking a leave of absence from mid-2018 to mid-2019 to pursue career opportunities.\\
+    & \textsc{Major:} Computing and Software Systems\\
+    & \textsc{Clubs:} CISSA (Computing Students Association) Committee, Industry Liaison\\
+    & \textsc{Grade:} Second Class Honours\\
+    \textsc{2018} & \textbf{Ethereum Developer Program} at \textsc{ConsenSys Academy}\\
+    & 10-week course covering Ethereum smart contract and dApp development.\\
+    & \textsc{Grade:} 95.6/100
+\end{tabular}
+%Section: Projects
+\section{Projects}
+\begin{tabular}{rp{13.5cm}}	
+    \textsc{2018-Present} & \textbf{Glacier Wallet}\\
+    & Glacier Wallet is a fire-proof, corrosion-resistant, theft and loss resistant cryptocurrency mnemonic backup solution. Expected to become available for purchase mid-2019.\\
+    \textsc{2018} & \textbf{Speed Checkers dApp}\\
+    & Test your skills and wager ETH playing checkers on the Ethereum blockchain.\\
+    \textsc{2017} & \textbf{Cryptocurrency Arbitrage Bot}\\
+    & Taking advantage of inefficiencies between Australian and international markets during the crypto bubble of 2017, the bot provided on average over \$10,000 of liquidity to Australian markets every week.\\
+    2017 & \textbf{Handy Handbook Tool}\\
+    & Browser extension that greatly improves the user experience of the University of Melbourne subject handbook.\\
+    \textsc{2017} & \textbf{BACon}\\
+    & React Native mobile application to help drivers track their blood alcohol content.
+\end{tabular}
+\section{Skills}
+\begin{tabular}{rl}
+    Strong:& \textsc{JavaScript}, \textsc{React}, \textsc{Redux}, \textsc{Redux-Saga}, \textsc{Jest/Enzyme}, \textsc{Electron}, \textsc{Git}, \textsc{Blockchain}\\
+    Intermediate:& \textsc{Solidity}, \textsc{React Native}, \textsc{Gatsbyjs}, \textsc{Webpack}, \textsc{Angularjs}, \textsc{CI}, \textsc{AWS}, \textsc{Linux}, \textsc{SQL}\\
+\end{tabular}
+\end{document}
